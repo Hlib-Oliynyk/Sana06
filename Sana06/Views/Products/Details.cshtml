@@ -1,6 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Деталі продукту";
+    string productName = Context.Request.Query["name"];
+    ViewData["Title"] = $"Деталі - {productName}";
 }
 
-<h1>Деталі продукту</h1>
-<p>@ViewData["Message"]</p>
+<div class="container">
+    <h1 class="page-title">Детальна інформація про товар</h1>
+    <div class="product-info">
+        <h2>@productName</h2>
+        <p>Цей товар має чудові характеристики та високу якість. Він стане чудовим вибором для вашого комфорту.</p>
+        <ul>
+            <li>Гарантія 2 роки</li>
+            <li>Доставка по всій країні</li>
+            <li>Спеціальні знижки для постійних клієнтів</li>
+        </ul>
+        <a href="/Products/Index" class="btn">Повернутися до каталогу</a>
+    </div>
+</div>
+
+
